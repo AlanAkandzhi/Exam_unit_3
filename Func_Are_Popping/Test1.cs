@@ -22,8 +22,8 @@ public class Test1
 
     private static void TestCube()
     {
-        double input = 5;
-        double expected = 729;
+        double input = 3;
+        double expected = 27;
         double result = MathOperations.Cube(input);
         Console.WriteLine($"Test Cube: Expected={expected}, Result={result}, Passed={result == expected}");
     }
