@@ -1,10 +1,10 @@
-# Exam_Unit_3 Overview 🎓
+# Exam_Unit_3 Overview 📚🗂️
 
-## 📝 Tasks and Solutions
+## ✅ Tasks and Solutions
 
 ### Task: Functions are a popping.
 
-#### Objective 🎯
+#### Objective 📌
 Create the following functions:
 
     A function that returns the square of a number
@@ -14,7 +14,7 @@ Create the following functions:
     A function that returns the area of a circle given the radius.
     A function that returns a greeting, given a name.
 
-#### Solution 💡
+#### Solution 🔑
 
 #### Length in Millimeters
 
@@ -81,7 +81,7 @@ string greeting = Greet("Christian");
 ```
 ### Task: Flatten those numbers.
 
-#### Objective 🎯
+#### Objective 📌
 In the file arrays.json there is an example of a an array that contains integers and possibly other arrays. If you need more test data you can get as many as you want from this source The task is to write a function that returns a flattened version of any such array structure.
 
 NB! You might be tempted to use string manipulation, that is considered not solving the task. This is a jagged array of integers, not a string.
@@ -104,7 +104,7 @@ Example:
 //--> 
 [435, 2028, 3047, 4910, 8146, 7999, 1433, 7211, 1197, 6002, 2821, 3508]
 
-#### Solution 💡
+#### Solution 🔑
 ### FlattenArray Method
 
 This function recursively traverses an array that may contain nested arrays of integers and flattens it into a single-dimensional array.
@@ -153,7 +153,7 @@ Console.WriteLine($"Flattened Array: [{string.Join(", ", flattenedArray)}]");
 ```
 ### Task: Left and right up and down, away we go.
 
-#### Objective 🎯
+#### Objective 📌
 In the file nodes.jsonthere is an example of a data structure that has a value of type integer, but also a left and right variable that could be a object of the same type. If you need more test data you can get as much as you want from this source
 
 Calculate the sum of the full structure.
@@ -179,7 +179,7 @@ Deepest level = 4
 Nodes = 5
 ```
 
-#### Solution 💡
+#### Solution 🔑
 
 ###Solution in C#
 
@@ -265,7 +265,7 @@ Nodes = 5
 ```
 ### Task: My books they are a mess.
 
-#### Objective 🎯
+#### Objective 📌
 
 1.Return only books starting with The
 
@@ -285,7 +285,7 @@ Nodes = 5
 
 9.Lits books grouped by author first name
 
-#### Solution 💡
+#### Solution 🔑
 These books are presumably stored in a JSON file, but for the purposes of this example, let's assume that deserialized the JSON into a list of Book objects. Each Book object has properties such as Title, Author, PublicationYear, and ISBN.
 
 First to define a Book class that represent the structure of a book:
