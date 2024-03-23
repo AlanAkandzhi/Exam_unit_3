@@ -15,74 +15,70 @@ Create the following functions:
     A function that returns a greeting, given a name.
 
 #### Solution 💡
+
 #### Length in Millimeters
 
 Given a length in inches, this function returns the equivalent length in millimeters.
 
-csharp
-
+```
 public static double InchesToMillimeters(double inches)
 {
     return inches * 25.4;
-}
-
+} 
+```
 #### Square Root of a Number
 
 This function calculates and returns the square root of a given number.
 
-csharp
-
+```
 public static double Root(double number)
 {
     return Math.Sqrt(number);
 }
-
+```
 #### Cube of a Number
 
 This function returns the cube of the given number.
 
-csharp
-
+```
 public static double Cube(double number)
 {
     return Math.Pow(number, 3);
 }
-
+```
 #### Area of a Circle
 
 Given the radius of a circle, this function calculates and returns its area.
 
-csharp
-
+```
 public static double CircleArea(double radius)
 {
     return Math.PI * radius * radius;
 }
-
+```
 #### Greeting
 
 This function returns a greeting message for the given name.
 
-csharp
-
+```
 public static string Greet(string name)
 {
     return $"Hello, {name}!";
 }
+```
 
 #### Usage
 
 To use these functions, simply call them from your C# application with the appropriate parameters.
 
-csharp
-
+```
 double square = Square(4);
 double length = InchesToMillimeters(10);
 double root = Root(16);
 double cube = Cube(3);
 double area = CircleArea(5);
 string greeting = Greet("Christian");
-
+```
 ### Task: Flatten those numbers.
 
 #### Objective 🎯
@@ -113,7 +109,7 @@ Example:
 
 This function recursively traverses an array that may contain nested arrays of integers and flattens it into a single-dimensional array.
 
-```csharp
+```
 using System;
 using System.Collections.Generic;
 
@@ -139,10 +135,7 @@ public class ArrayFlattener
 ```
 ### Usage
 
-To use the FlattenArray method, you will need to cast your nested arrays to object[] because C# is statically typed and does not allow arrays of mixed types (like an array directly containing both int and int[] types). Here's an example of how to call the method:
-
-csharp
-
+```
 object[] jaggedArray = new object[]
 {
     435,
@@ -157,16 +150,16 @@ object[] jaggedArray = new object[]
 
 List<int> flattenedArray = ArrayFlattener.FlattenArray(jaggedArray);
 Console.WriteLine($"Flattened Array: [{string.Join(", ", flattenedArray)}]");
-
+```
 ### Task: Left and right up and down, away we go.
 
 #### Objective 🎯
 In the file nodes.jsonthere is an example of a data structure that has a value of type integer, but also a left and right variable that could be a object of the same type. If you need more test data you can get as much as you want from this source
 
-    Calculate the sum of the full structure.
-    Report the deepest level of the structure.
-    Report the number of nodes.
-
+Calculate the sum of the full structure.
+Report the deepest level of the structure.
+Report the number of nodes.
+```
 {
   value: 67, // Level 1
   left: { value: 765, left: null, right: null }, // Level 2
@@ -184,7 +177,7 @@ In the file nodes.jsonthere is an example of a data structure that has a value o
 Sum = 1942
 Deepest level = 4
 Nodes = 5
-
+```
 
 #### Solution 💡
 
@@ -193,7 +186,7 @@ Nodes = 5
 Define a class to represent a node in the tree:
 
 ### csharp
-
+```
 public class TreeNode
 {
     public int Value { get; set; }
@@ -207,11 +200,11 @@ public class TreeNode
         Right = right;
     }
 }
-
+```
 Then, implement methods to calculate the sum of values, the depth of the tree, and the number of nodes:
 
 ### csharp
-
+```
 public class BinaryTree
 {
     public TreeNode Root { get; set; }
@@ -239,13 +232,13 @@ public class BinaryTree
         return 1 + CountNodes(node.Left) + CountNodes(node.Right);
     }
 }
-
+```
 ### Usage Example
 
-Given the provided JSON structure, you can create the tree in C# and use the above methods to find the required information:
+Given the provided JSON structure, create the tree in C# and use the above methods to find the required information:
 
-csharp
 
+```
 var root = new TreeNode(67,
     new TreeNode(765),
     new TreeNode(167, 
@@ -263,34 +256,33 @@ int nodeCount = tree.CountNodes(tree.Root);
 Console.WriteLine($"Sum = {sum}");
 Console.WriteLine($"Deepest level = {depth}");
 Console.WriteLine($"Nodes = {nodeCount}");
-
+```
 This code snippet demonstrates how to initialize the tree with the given structure, and then calculates the sum of all node values, the depth of the tree, and the total number of nodes, producing the expected output:
-
+```
 Sum = 1942
 Deepest level = 4
 Nodes = 5
-
+```
 ### Task: My books they are a mess.
 
 #### Objective 🎯
 
-    Return only books starting with The
-    Return only books written by authors with a t in their name
-    The number of books written after 1992
-    The number of books written before 2004
-    Return the isbn number of all the books for a given author.
-    List books alphabetically assending or decendig
-    List books chronologically assending or decendig
-    List books grouped by author last name
-    Lits books grouped by author first name
+1.Return only books starting with The
+2.Return only books written by authors with a t in their name
+3.The number of books written after 1992
+4.The number of books written before 2004
+5.Return the isbn number of all the books for a given author.
+6.List books alphabetically assending or decendig
+7.List books chronologically assending or decendig
+8.List books grouped by author last name
+9.Lits books grouped by author first name
 
 #### Solution 💡
-we need to write a series of C# functions to manipulate and query a collection of books. These books are presumably stored in a JSON file, but for the purposes of this example, let's assume we have deserialized the JSON into a list of Book objects. Each Book object has properties such as Title, Author, PublicationYear, and ISBN.
+These books are presumably stored in a JSON file, but for the purposes of this example, let's assume that deserialized the JSON into a list of Book objects. Each Book object has properties such as Title, Author, PublicationYear, and ISBN.
 
 First to define a Book class that represent the structure of a book:
 
-### csharp
-
+```
 public class Book
 {
     public string Title { get; set; }
@@ -305,19 +297,17 @@ public class Book
         PublicationYear = publicationYear;
         ISBN = isbn;
     }
+```
 Implement the required functions:
-
- // The number of books written after 1992
+```
     public int CountBooksAfter1992()
     {
         return Books.Count(book => book.PublicationYear > 1992);
     }
 
-    // The number of books written before 2004
     public int CountBooksBefore2004()
     {
         return Books.Count(book => book.PublicationYear < 2004);
     }
-
-    // Return the ISBN number of all the books for a given author
     public IEnumerable<string> ISBNsByAuthor(string author)
+```
